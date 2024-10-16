@@ -5,31 +5,190 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brian Han - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> <!-- Add this line -->
 </head>
 <body>
 
-    <div class="sidebar">
-        <div class="profile-pic">
-            <img src="images/profile.png" alt="Profile Picture">
-        </div>
+    <!-- Header (Green bar at the top) -->
+    <header class="header-bar">
         <nav>
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Experience</a></li>
-                <li><a href="#">Education</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Awards</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#skills">Skills</a></li>
             </ul>
         </nav>
-    </div>
+    </header>
 
-    <div class="main-content">
-        <h1>Brian <span class="green-text">(Sungu)</span> Han</h1>
-        <h2>Student at Michigan State University</h2>
-        <p>East Lansing, Mi<a href="mailto:email@example.com">email@example.com</a></p>
-        <p></p>
+    <!-- Profile Picture Section -->
+    <section id="profile-picture">
+        <div class="profile-container">
+            <img src="images/profile.png" alt="Profile Picture">
+            <h2 class="profile-name">Brian Han</h2> 
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h1>About Me</h1>
+        <div class="about-container">
+            <div class="about-left">
+                <p><strong>Name:</strong> Brian Han</p>
+                <p><strong>Email:</strong> hansungu@msu.edu</p>
+                <p><strong>Education:</strong> Michigan State University</p>
+            </div>
+            <div class="about-right">
+                <h2>Nice to meet you, I'm Brian Han!</h2>
+                <p>A "professional" DJ🎶, a hiker⛰️, and a private chef👨‍🍳. I also enjoy watching sports⚽🏈🏀 and Netflix📺.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Resume Section -->
+    <section id="resume">
+        <h1>My Resume</h1>
+        <div class="timeline">
+            <!-- Work Experience Box -->
+            <div class="experience-box">
+                <p>WORK EXPERIENCE <span>💼</span></p>
+            </div>
+
+            <!-- Single Job Entry -->
+            <div class="job">
+                <!-- Left Side (Job Details) -->
+                <div class="job-content-left">
+                    <h2>Software Engineering Intern</h2>
+                    <h3>KPIT | June 2024 - August 2024</h3>
+                    <p>Configured an Apache web server to host Gerrit and Jenkins locally, implementing reverse proxy to streamline CI/CD operations, reducing build and deployment time</p>
+                    <p>Developed a REST API using Flask and SQLite to manage server-side data for BLE beacons, improving the efficiency of beacon data management and streamlining communication</p>
+                    <p>Engineered a virtual billboarding system utilizing BLE technology to create beacons that can transmit BLE signals for passing by cars</p>
+                    <p>Developed an IVI application on the SA8295P Snapdragon™ Automotive Development Platform to control ECU lighting and process incoming BLE signals from virtual billboards</p>
+                </div>
+
+                <!-- Vertical Line and Icon -->
+                <div class="job-icon">
+                    <div class="timeline-icon">
+                        <span>💼</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vertical Line -->
+            <div class="experience-line"></div> <!-- This is the line that connects the two sections -->
+
+            <!-- Projects Box -->
+            <div class="project-box">
+                <p>PROJECTS <span>📝</span></p>
+            </div>
+
+            <!-- Single Project Entry -->
+            <div class="project">
+                <!-- Right Side (Project Details) -->
+                <div class="project-content-right">
+                    <h2>ASL Gesture Recognition</h2>
+                    <h3>Project | 2024</h3>
+                    <p>Developed and trained a CNN-based ASL recognition model with 36 classes, achieving 87% accuracy on test data by using data augmentation techniques (rotation, shifting, zooming)</p>
+                    <p>Reduced model overfitting by implementing dropout layers, improving validation accuracy by 5%</p>
+                    <p>Automated classification of ASL gestures with real-time predictions, processing 12 images per second, improving system efficiency for deployment in educational applications</p>
+                </div>
+
+                <!-- Vertical Line and Icon for Project -->
+                <div class="project-icon">
+                    <div class="timeline-icon">
+                        <span>📝</span>
+                    </div>
+                </div>
+            </div>
+            <div class="job">
+                <!-- Left Side (Project Details) -->
+                <div class="job-content-left">
+                    <h2>FAANG Stock Data Analyst and Predictive Model Developer Using SQL and Python</h2>
+                    <h3>Project | 2024</h3>
+                    <p>Queried and analyzed large FAANG stock datasets using SQL and Python, optimizing data extraction and transformation processes, resulting in a 30% reduction in query execution time</p>
+                    <p>Visualized stock trends, returns, and volatility using Python libraries (Matplotlib, Seaborn), providing valuable insights that identified patterns</p>
+                    <p>Applied statistical techniques including rolling averages and lagged returns to explore stock correlations, highlighting anomalies</p>
+                </div>
+            
+                <!-- Vertical Line and Icon -->
+                <div class="job-icon">
+                    <div class="timeline-icon">
+                        <span>📝</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project">
+                <!-- Right Side (Project Details) -->
+                <div class="project-content-right">
+                    <h2>Automated Multi-Footage Editing with Motion Detection</h2>
+                    <h3>Project | 2023</h3>
+                    <p>Developed a Python-based Motion Detection Video Editor using OpenCV and MoviePy, capable of analyzing videos to identify and compile segments with the highest motion activity</p>
+                    <p>Implemented advanced video processing techniques including frame-by-frame analysis and motion intensity graphing, and designed a customizable output feature for setting the total duration of compiled videos</p>
+                </div>
+
+                <!-- Vertical Line and Icon for Project -->
+                <div class="project-icon">
+                    <div class="timeline-icon">
+                        <span>📝</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Box -->
+            <div class="education-box">
+                <p>EDUCATION <span>🎓</span></p>
+            </div>
+
+            <!-- Single Education Entry -->
+            <div class="education">
+                <!-- Left Side (Education Details) -->
+                <div class="education-content-left">
+                    <h2>Michigan State University</h2>
+                    <h3>Computer Science & Computational Data Science | 2024</h3>
+                    <h3>Minor in Business</h3>
+                    <h3>Relevant Coursework</h3>
+                    <p>Computer Systems	</p>
+                    <p>Object-Oriented Software Design</p>
+                    <p>Information Management and the Cloud</p>
+                    <p>Algorithm Engineering</p>
+                    <p>Database Systems</p>
+                    <p>Introduction to Machine Learning</p>
+                </div>
+
+                <!-- Vertical Line and Icon for Education -->
+                <div class="education-icon">
+                    <div class="timeline-icon">
+                        <span>🎓</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+<!-- Skills Section -->
+<section id="skills">
+    <h1>Skills</h1>
+    <div class="skills-container">
+        <div class="skill-item">
+            <h2>Programming Languages</h2>
+            <p>Python, Java, SQL, JavaScript</p>
+        </div>
+        <div class="skill-item">
+            <h2>Web Development</h2>
+            <p>HTML, CSS, Flask, React</p>
+        </div>
+        <div class="skill-item">
+            <h2>Tools & Technologies</h2>
+            <p>Git, Docker, Jenkins, PostgreSQL</p>
+        </div>
+        <div class="skill-item">
+            <h2>Data Science</h2>
+            <p>Pandas, NumPy, Scikit-learn, TensorFlow</p>
+        </div>
     </div>
+</section>
 
 </body>
 </html>

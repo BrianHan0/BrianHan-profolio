@@ -1,53 +1,41 @@
-body {
+/* General styles */
+html, body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    display: flex;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth; /* Enable smooth scrolling */
 }
 
-.sidebar {
-    background-color: #014737; /* Green color for sidebar */
-    width: 250px;
-    padding: 20px;
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-bar {
+    background-color: #014737; /* Green color for the top bar */
     color: white;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start; /* Align content at the top */
-    position: relative;
-}
-
-.profile-pic {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.profile-pic img {
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    margin-bottom: 20px;
-    border: 4px solid white;
-}
-
-nav {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center the nav sections */
+    padding: 10px 20px;
     width: 100%;
+    position: fixed; /* Keep the header fixed at the top */
+    top: 0;
+    z-index: 1000;
+    height: 80px;
 }
 
 nav ul {
+    display: flex;
     list-style-type: none;
     padding: 0;
     margin: 0;
-    text-align: center;
 }
 
 nav ul li {
-    margin: 15px 0;
+    margin-left: 20px;
 }
 
 nav ul li a {
@@ -56,53 +44,360 @@ nav ul li a {
     font-size: 18px;
 }
 
-.main-content {
-    flex-grow: 1;
-    padding: 60px;
-    background-color: white;
+/* Full viewport height for each section */
+section {
+    min-height: 100vh; /* Ensure each section takes the full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    box-sizing: border-box;
+    transition: background-color 0.5s ease;
+}
+
+/* Profile Picture Section */
+#profile-picture {
+    background-color: #f4f4f4; /* Light gray */
+}
+
+.profile-container img {
+    border-radius: 50%;
+    width: 300px; /* Larger size for the profile picture */
+    height: 300px;
+    border: 6px solid #014737;
+}
+
+/* About Me Section */
+#about {
+    background-color: #ffefd5; /* Light peach */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center the content vertically */
-    align-items: flex-start; /* Align content to the left */
+    justify-content: center;
+    align-items: center;
 }
 
-.main-content h1 {
-    font-size: 56px;
-    margin: 0;
-    color: #333;
+#about h1 {
+    font-size: 48px;
+    margin-bottom: 40px;
 }
 
-.main-content h1 .green-text {
-    color: #014737; /* Green color for (Sungu) */
+.about-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Create spacing between the columns */
+    max-width: 800px; /* Constrain the width */
+    margin: 0 auto; /* Center the content */
 }
 
-.main-content h2 {
-    color: #014737; /* Matching the sidebar color */
+.about-left, .about-right {
+    text-align: left;
+    font-size: 18px;
+}
+
+.about-right h2 {
+    margin-bottom: 20px;
     font-size: 24px;
-    margin: 10px 0 20px 0;
 }
 
-.main-content p {
+.about-right h3 {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+section {
+    min-height: 100vh; /* Each section takes full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Keep centered for other sections */
+    align-items: center;
+    text-align: center;
+    padding: 40px; /* Default padding for other sections */
+    box-sizing: border-box;
+    transition: background-color 0.5s ease;
+}
+
+#resume {
+    background-color: #e0f7fa; /* Light blue background */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 200vh; /* Adjust the height to make it longer vertically */
+}
+
+#resume h1 {
+    font-size: 48px;
+    margin: 0;
+    padding-top: 100px; /* Add padding to lower the header */
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+
+
+/* Work Experience Box */
+.experience-box {
+    display: inline-block; /* Box sized based on content */
+    padding: 3px 10px;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    margin-top: 5px;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Vertical line below the Work Experience box */
+.experience-box::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Position the line directly below the box */
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 500px; /* Length of the vertical line */
+    background-color: #333; /* Line color */
+}
+
+/* Job container to align the job details and icon */
+.job {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    position: relative;
+}
+
+/* Left side of the job content (Text) */
+.job-content-left {
+    text-align: left;
+    margin-right: 20px; /* Adjust spacing between text and icon */
+    width: 45%; /* Adjust width to control how far the text goes */
+    position: relative;
+    left: -50px; /* Move the text to the left side of the icon */
+}
+
+.job-content-left h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.job-content-left h3 {
     font-size: 18px;
-    margin: 10px 0;
-    color: #555;
+    color: gray;
+    margin-bottom: 10px;
 }
 
-.main-content a {
-    color: #014737;
-    text-decoration: none;
-    font-size: 18px;
+.job-content-left p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
 }
 
-.social-icons {
+/* Timeline Icon (centered on the line) */
+.job-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%; /* Position the icon centered on the line */
+    transform: translateX(-50%);
+}
+
+.timeline-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #4caf50; /* Green background */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Vertical line */
+.experience-line {
+    width: 2px;
+    background-color: #333;
+    height: 1400px;
+    position: absolute;
+    left: 50%; /* Center the line */
+    transform: translateX(-50%); /* Adjust to perfectly center the line */
+}
+
+/* Box for Projects (similar to Experience box) */
+.project-box {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
     margin-top: 20px;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
-.social-icons a {
-    margin-right: 15px;
+/* Project container to align the project details and icon */
+.project {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    position: relative;
+    flex-direction: row-reverse; /* Reverse the row to place text on the right */
 }
 
-.social-icons img {
-    width: 30px;
-    height: 30px;
+/* Right side of the project content (Text) */
+.project-content-right {
+    text-align: left;
+    margin-left: 20px; /* Adjust spacing between text and icon */
+    width: 45%; /* Adjust width to control how far the text goes */
+    position: relative;
+    right: -50px; /* Move the text to the right side of the icon */
 }
+
+.project-content-right h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.project-content-right h3 {
+    font-size: 18px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.project-content-right p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Timeline Icon (centered on the line for project) */
+.project-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%; /* Position the icon centered on the line */
+    transform: translateX(-50%);
+}
+
+
+
+/* Box for Education (similar to Experience box) */
+.education-box {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Education container to align the education details and icon */
+.education {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    position: relative;
+}
+
+/* Left side of the education content (Text) */
+.education-content-left {
+    text-align: left;
+    margin-right: 20px; /* Adjust spacing between text and icon */
+    width: 45%; /* Adjust width to control how far the text goes */
+    position: relative;
+    left: -50px; /* Move the text to the left side of the icon */
+}
+
+.education-content-left h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.education-content-left h3 {
+    font-size: 18px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.education-content-left p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Timeline Icon (centered on the line for education) */
+.education-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%; /* Position the icon centered on the line */
+    transform: translateX(-50%);
+}
+
+
+/* Skills Section */
+#skills {
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 40px; /* Add padding for spacing */
+    text-align: center;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content */
+    margin: 0 auto; /* Center the container */
+}
+
+.skill-item {
+    background-color: #ffffff; /* White background for skill items */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    margin: 10px 0; /* Spacing between skills */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    width: 80%; /* Set a width for consistency */
+}
+
+.skill-item h2 {
+    font-size: 20px; /* Font size for skill category */
+    margin-bottom: 10px; /* Space below category */
+}
+
+.skill-item p {
+    font-size: 16px; /* Font size for skills listed */
+}
+
+
+.profile-name {
+    font-family: 'Pacifico', cursive; /* Use the Pacifico font */
+    font-size: 32px; /* Adjust font size as needed */
+    margin-top: 10px; /* Space between image and name */
+    color: #333; /* Color of the name text */
+}
+
